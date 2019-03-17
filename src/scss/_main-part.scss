@@ -1,0 +1,25 @@
+.forward__item {
+	@include flex-container($align: center);
+	font-family: 'FuturaB', sans-serif;
+
+	.svg_icon {
+		font-size: 28px;
+		margin-right: 16px;
+	}
+}
+.title-main {
+	font: bold 4.6rem/1.2 'ApexNew', sans-serif;
+	margin: 0 0 3rem;
+}
+.main__section {
+	padding: 2.7rem 0 0;
+	text-align: center;
+}
+.description {
+    max-width: 770px;
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1.45;
+    margin: 0 0 6rem;
+}

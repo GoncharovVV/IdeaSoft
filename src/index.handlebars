@@ -3,16 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IdeaSoft</title>
-    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"> --}}
-    {{!-- <link rel="stylesheet" href="dist/all.css"> --}}
+    <title>{{htmlWebpackPlugin.options.title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    
 </head>
 <body>
-    <header>
-    </header>
-    <main>
-        <h1>{{htmlWebpackPlugin.options.title}}</h1>
-        <div class="swiper-container">
+        {{!-- <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">Slide 1</div>
               <div class="swiper-slide">Slide 2</div>
@@ -27,10 +23,19 @@
             </div>
             <!-- Add Scrollbar -->
             <div class="swiper-scrollbar"></div>
-          </div>
-    </main>
-    <footer>
-        {{!-- <script src="dist/main.js"></script> --}}
-    </footer>
+          </div> --}}
+     {{> partials/icons}} 
+        <div class="wrapper">
+            {{> partials/header title=htmlWebpackPlugin.options.title}} 
+            <main class="main">
+                {{> partials/forward}}
+                <section class="main__section">
+                    <div class="container">
+                        {{> partials/main-part}}
+                    </div>
+                </section>
+            </main>
+           {{> partials/footer}}
+        </div>
 </body>
 </html>
