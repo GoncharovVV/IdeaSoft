@@ -2,8 +2,34 @@ const path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-    isDevelopment = process.env.NODE_ENV !== 'production',
-    conf = {
+    isDevelopment = process.env.NODE_ENV !== 'production';
+const firstSliderJSON = [
+    {'img':'/static/slide2-1.jpg', 'img2x':'/static/slide2-1-2x.jpg', 'img3x':'/static/slide2-1-3x.jpg' },
+    {'img':'/static/slide2-2.jpg', 'img2x':'/static/slide2-2-2x.jpg', 'img3x':'/static/slide2-2-3x.jpg' },
+    {'img':'/static/slide2-3.jpg', 'img2x':'/static/slide2-3-2x.jpg', 'img3x':'/static/slide2-3-3x.jpg' },
+    {'img':'/static/slide2-4.jpg', 'img2x':'/static/slide2-4-2x.jpg', 'img3x':'/static/slide2-4-3x.jpg' },
+    {'img':'/static/slide2-1.jpg', 'img2x':'/static/slide2-1-2x.jpg', 'img3x':'/static/slide2-1-3x.jpg' },
+    {'img':'/static/slide2-2.jpg', 'img2x':'/static/slide2-2-2x.jpg', 'img3x':'/static/slide2-2-3x.jpg' },
+    {'img':'/static/slide2-3.jpg', 'img2x':'/static/slide2-3-2x.jpg', 'img3x':'/static/slide2-3-3x.jpg' },
+    {'img':'/static/slide2-4.jpg', 'img2x':'/static/slide2-4-2x.jpg', 'img3x':'/static/slide2-4-3x.jpg' },
+];
+const secondSliderJSON = [
+    {'img':'/static/slide1-1.jpg', 'img2x':'/static/slide1-1-2x.jpg', 'img3x':'/static/slide1-1-3x.jpg' },
+    {'img':'/static/slide1-2.jpg', 'img2x':'/static/slide1-2-2x.jpg', 'img3x':'/static/slide1-2-3x.jpg' },
+    {'img':'/static/slide1-3.jpg', 'img2x':'/static/slide1-3-2x.jpg', 'img3x':'/static/slide1-3-3x.jpg' },
+    {'img':'/static/slide1-1.jpg', 'img2x':'/static/slide1-1-2x.jpg', 'img3x':'/static/slide1-1-3x.jpg' },
+    {'img':'/static/slide1-2.jpg', 'img2x':'/static/slide1-2-2x.jpg', 'img3x':'/static/slide1-2-3x.jpg' },
+    {'img':'/static/slide1-3.jpg', 'img2x':'/static/slide1-3-2x.jpg', 'img3x':'/static/slide1-3-3x.jpg' },
+];
+const thirdSliderJSON = [
+    {'img':'/static/slide3-1.jpg', 'img2x':'/static/slide3-1-2x.jpg', 'img3x':'/static/slide3-1-3x.jpg' },
+    {'img':'/static/slide3-2.jpg', 'img2x':'/static/slide3-2-2x.jpg', 'img3x':'/static/slide3-2-3x.jpg' },
+    {'img':'/static/slide3-3.jpg', 'img2x':'/static/slide3-3-2x.jpg', 'img3x':'/static/slide3-3-3x.jpg' },
+    {'img':'/static/slide3-1.jpg', 'img2x':'/static/slide3-1-2x.jpg', 'img3x':'/static/slide3-1-3x.jpg' },
+    {'img':'/static/slide3-2.jpg', 'img2x':'/static/slide3-2-2x.jpg', 'img3x':'/static/slide3-2-3x.jpg' },
+    {'img':'/static/slide3-3.jpg', 'img2x':'/static/slide3-3-2x.jpg', 'img3x':'/static/slide3-3-3x.jpg' },
+];
+const conf = {
         entry: {
             bundle: './src/index.js',
         },
@@ -71,7 +97,6 @@ const path = require('path'),
                 }
             ]
         },
-        watch:true,
         resolve: { extensions: [".js", ".ts"] },
         plugins: [
             new webpack.LoaderOptionsPlugin({
@@ -85,11 +110,15 @@ const path = require('path'),
             }),
             new HtmlWebpackPlugin({
                 title: 'IdeaSoft Test1',
+                firstSlider: firstSliderJSON,
+                secondSlider: secondSliderJSON,
+                thirdSlider: thirdSliderJSON,
                 template: './src/index.handlebars',
             }),
         ],
+        watch:true,
         devtool: 'eval-sourcemap'
-    };
+};
 module.exports = (env, options) => {
     const production = options.mode === 'production';
     conf.devtool = production ? 'source-map': 'eval-sourcemap';

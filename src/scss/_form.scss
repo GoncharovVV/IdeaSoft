@@ -1,0 +1,90 @@
+.form__holder {
+    margin: 0 0 10.5rem;
+    display: inline-block;
+    max-width: 723px;
+    width: 100%;
+    .title {
+        margin: 0 0 11px;
+    }
+}
+.form__top-row {
+    @include flex-container($just: center, $align: baseline, $wrap: wrap);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 0 3.6rem;
+    width: 100%;
+    span {
+        margin-right: 7px;
+    }
+}
+.mail-to {
+    text-decoration: underline;
+}
+.form {
+    @include flex-container($just: space-between, $wrap: wrap);
+}
+.form__label {
+    font: bold 13px/1.2 'ApexNew', sans-serif;
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin: 0 0 10px;
+}
+.form__textfield {
+    display: block;
+    border-radius: 6px;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.11;
+    padding: 13px 12px;
+    color: $white;
+}
+textarea.form__textfield {
+    resize: none;
+    height: 110px;
+
+}
+.form__row {
+    margin: 0 0 2.8rem;
+    width: 100%;
+}
+.form__row_half {
+    width: calc(50% - 13px);
+    @include max-screen(640px) {
+        width: 100%;
+    }
+}
+.form__row_bottom {
+    padding: 1.3rem 0 0;
+    width: 100%;
+
+}
+.button {
+    border-radius: 4px;
+    line-height: 1;
+    background-color: $blue;
+    font-size: 16px;
+    font-family: 'FuturaB', sans-serif;
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 27px;
+    box-shadow: 0 2px 17px 0 transparent;
+    transition: box-shadow .3s, background-color .3s;
+    will-change: box-shadow;
+    @include min-screen(1024px) {
+        &:hover {
+            background-color: #2abcef;
+            box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+.button__arrow {
+    transform: rotate(180deg);
+    font-size: 34px;
+    height: 0.6em;
+    margin-left: 3.4rem;
+}

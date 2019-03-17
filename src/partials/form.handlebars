@@ -1,0 +1,33 @@
+<div class="form__holder">
+    <h2 class="title">HAVE AN IDEA? CONTACT US!</h2>
+    <div class="form__top-row">
+        <span class="form__description">Use this form or write to us on </span>
+        <a href="mailto:hello@ideasoft.io" class="mail-to">hello@ideasoft.io</a>
+    </div>
+    <form class="form" action="/" method="post">
+        <div class="form__row">
+            <label class="form__label" for="name">YOUR NAME <sup>*</sup></label>
+            <input class="form__textfield" type="text" name="name" id="name" required="" placeholder="Allan Barrett">
+        </div>
+        <div class="form__row form__row_half">
+            <label class="form__label" for="email">YOUR EMAIL <sup>*</sup></label>
+            <input class="form__textfield" type="email" name="email" required="" id="email" placeholder="allanbarret@gmail.com">
+        </div>
+        <div class="form__row form__row_half">
+            <label class="form__label" id="phone">YOUR PHONE NUMBER</label>
+            <input class="form__textfield" type="tel" name="phone" id="phone" placeholder="0202345989">
+        </div>
+        <div class="form__row">
+            <label for="message" class="form__label">DO YOU HAVE ANY QUESTIONS OR REQUESTS?</label>
+            <textarea class="form__textfield" name="message" id="message" rows="4"></textarea>
+        </div>
+        <div class="form__row_bottom">
+            <button type="submit" class="button">
+                CONTINUE
+                <svg class="svg_icon button__arrow">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#long-arrow"></use>
+                </svg>
+            </button>
+        </div>
+    </form>
+</div>

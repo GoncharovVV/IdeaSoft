@@ -1,0 +1,16 @@
+<div class="swiper-container slider">
+    <img src="/static/phone-decor.png" alt="decorator" class="decorator">
+    <div class="swiper-wrapper">
+        {{#each sliderItem}}
+            <div class="swiper-slide">
+                <div class="swiper-slide__image-holder">
+                    <img src="{{img}}"
+                        srcset="{{img2x}} 2x,
+                                {{img3x}} 3x"
+                        class="absolute-img ">
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="swiper-scrollbar"></div>
+</div>
